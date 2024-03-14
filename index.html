@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flor em Movimento</title>
+<style>
+    @keyframes mover-flor {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+    .flor {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        margin: 50px auto;
+    }
+    
+    .petala {
+        width: 20px;
+        height: 40px;
+        background-color: pink;
+        position: absolute;
+        top: 30px;
+        left: 40px;
+        border-radius: 50%;
+        animation: mover-flor 5s ease-in-out infinite;
+    }
+    
+    .petala::before,
+    .petala::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 40px;
+        background-color: pink;
+        border-radius: 50%;
+    }
+    
+    .petala::before {
+        top: -5px;
+        left: -10px;
+        transform: rotate(60deg);
+    }
+    
+    .petala::after {
+        top: -5px;
+        left: 10px;
+        transform: rotate(-60deg);
+    }
+</style>
+</head>
+<body>
+
+<div class="flor">
+    <div class="petala"></div>
+</div>
+
+</body>
+</html>
